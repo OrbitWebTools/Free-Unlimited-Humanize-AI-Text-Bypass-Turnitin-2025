@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="manifest" href="manifest.json">
-
-<meta name="theme-color" content="#4f46e5">
-<meta name="apple-mobile-web-app-status-bar-style" content="#4f46e5">
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#4f46e5">
     <meta name="robots" content="index, follow">
 
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#4f46e5">
+
     <title>Humanize AI Text Free | No Login & Unlimited Words | OrbitWebTools</title>
-    
-    <meta name="description" content="Use OrbitWebTools to humanize AI text for free. Unlimited words, no login required. Best AI to Human converter to bypass Turnitin, ZeroGPT & Originality.ai.">
-    
-    <meta name="keywords" content="humanize ai text free, orbitwebtools, ai text converter, bypass turnitin free, remove ai detection, chatgpt humanizer, unlimited ai humanizer, no login ai tool">
-    
+    <meta name="description" content="Use OrbitWebTools to humanize AI text for free. 100% Client-Side Privacy. Unlimited words. Best AI to Human converter to bypass Turnitin & ZeroGPT.">
+    <meta name="keywords" content="humanize ai text free, orbitwebtools, ai text converter, bypass turnitin free, remove ai detection, secure ai humanizer, client side tool">
     <meta name="author" content="OrbitWebTools">
-    
     <link rel="canonical" href="https://orbitwebtools.github.io/humanize-ai-text/" />
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
 
     <meta property="og:site_name" content="OrbitWebTools">
-    <meta property="og:title" content="Humanize AI Text Free - OrbitWebTools">
-    <meta property="og:description" content="Convert robotic AI text to human text instantly. Free, Unlimited, No Login.">
+    <meta property="og:title" content="Humanize AI Text Free - 100% Private">
+    <meta property="og:description" content="Convert robotic AI text to human text instantly on your phone. No Server Uploads.">
     <meta property="og:url" content="https://orbitwebtools.github.io/humanize-ai-text/">
     <meta property="og:type" content="website">
 
@@ -39,27 +32,15 @@
         "operatingSystem": "Web Browser",
         "applicationCategory": "ProductivityTool",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "description": "A free tool by OrbitWebTools to convert AI text into human-like text without login."
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "OrbitWebTools",
-        "url": "https://orbitwebtools.github.io/",
-        "logo": "https://orbitwebtools.github.io/logo.png",
-        "sameAs": []
+        "description": "A free privacy-focused tool to convert AI text into human-like text locally."
       },
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [{
           "@type": "Question",
-          "name": "Is OrbitWebTools Humanizer free?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes, OrbitWebTools provides this service 100% free with unlimited usage." }
-        }, {
-          "@type": "Question",
-          "name": "Does it bypass Turnitin?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Our advanced synonym replacement logic helps remove AI patterns that Turnitin detects." }
+          "name": "Is my data safe?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. This tool runs 100% on your device (Client-Side). No text is sent to our servers." }
         }]
       }
     ]
@@ -78,6 +59,8 @@
             --text-muted: #64748b;
             --border: #e2e8f0;
             --success: #10b981;
+            --privacy-bg: #ecfdf5;
+            --privacy-text: #047857;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -92,19 +75,38 @@
 
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-        /* Hero Header */
-        header { text-align: center; margin: 3rem 0 2rem; }
+        /* Header */
+        header { text-align: center; margin: 2rem 0 2rem; }
         h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; color: #1e293b; }
         .subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
         .highlight { color: var(--primary); }
 
-        /* The Tool */
+        /* PRIVACY BANNER (New Feature) */
+        .privacy-banner {
+            background: var(--privacy-bg);
+            border: 1px solid #a7f3d0;
+            color: var(--privacy-text);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .lock-icon { font-size: 1.4rem; }
+
+        /* Tool Box */
         .tool-wrapper { background: var(--surface); border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border: 1px solid var(--border); overflow: hidden; margin-bottom: 4rem; }
         
         .editor-grid { display: grid; grid-template-columns: 1fr; }
         @media(min-width: 768px) { .editor-grid { grid-template-columns: 1fr 1fr; } }
         
-        .box { padding: 20px; display: flex; flex-direction: column; height: 450px; }
+        .box { padding: 20px; display: flex; flex-direction: column; height: 500px; }
         .box:first-child { border-bottom: 1px solid var(--border); }
         @media(min-width: 768px) { 
             .box:first-child { border-bottom: none; border-right: 1px solid var(--border); } 
@@ -112,25 +114,25 @@
 
         .box-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: 700; font-size: 0.9rem; color: var(--text-muted); }
         
-        textarea { flex: 1; width: 100%; border: none; outline: none; resize: none; font-family: inherit; font-size: 1.05rem; line-height: 1.7; color: var(--text-main); background: transparent; }
+        textarea { flex: 1; width: 100%; border: none; outline: none; resize: none; font-family: inherit; font-size: 1.1rem; line-height: 1.7; color: var(--text-main); background: transparent; }
         
         /* Action Bar */
-        .actions { padding: 20px; background: #f1f5f9; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: center; gap: 15px; }
+        .actions { padding: 20px; background: #f1f5f9; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: center; gap: 15px; flex-direction: column; }
+        @media(min-width: 600px) { .actions { flex-direction: row; } }
         
-        .btn-main { background: var(--primary); color: white; border: none; padding: 16px 40px; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); display: flex; align-items: center; gap: 8px; }
+        .btn-main { background: var(--primary); color: white; border: none; padding: 16px 40px; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center; }
+        @media(min-width: 600px) { .btn-main { width: auto; } }
+        
         .btn-main:hover { background: var(--primary-hover); transform: translateY(-2px); }
         .btn-main:disabled { opacity: 0.7; cursor: wait; }
 
         .btn-copy { color: var(--primary); background: #e0e7ff; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; border: none; cursor: pointer; font-weight: 700; transition: 0.2s; }
         .btn-copy:hover { background: #c7d2fe; }
 
-        /* Trust Badges */
-        .trust-badges { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 3rem; opacity: 0.8; }
-        .badge-item { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: #475569; }
-        .check-icon { color: var(--success); }
-
-        /* Content Section (Optimized for OrbitWebTools Brand) */
-        .content-area { background: var(--surface); padding: 3rem; border-radius: 16px; border: 1px solid var(--border); }
+        /* Content Section */
+        .content-area { background: var(--surface); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 2rem; }
+        @media(min-width: 768px) { .content-area { padding: 3rem; } }
+        
         .content-area h2 { font-size: 1.8rem; margin: 2rem 0 1rem; color: #1e293b; letter-spacing: -0.5px; }
         .content-area h3 { font-size: 1.4rem; margin: 1.5rem 0 0.8rem; color: #334155; }
         .content-area p { margin-bottom: 1.2rem; font-size: 1.05rem; color: #475569; }
@@ -148,100 +150,86 @@
     <nav>
         <div class="nav-inner">
             <div class="logo">OrbitWeb<span class="highlight">Tools</span></div>
-            <div class="badge">v2.4 STABLE</div>
+            <div class="badge">PRO VERSION</div>
         </div>
     </nav>
 
     <div class="container">
         
         <header>
-            <h1>Humanize AI Text <span class="highlight">Free & Unlimited</span></h1>
-            <p class="subtitle">Bypass Turnitin, ZeroGPT & Originality.ai with <strong>OrbitWebTools</strong>. The only free tool with no login required.</p>
+            <h1>Humanize AI Text <span class="highlight">Free & Secure</span></h1>
+            <p class="subtitle">Bypass Turnitin, ZeroGPT & Originality.ai. <br>The most trusted <strong>Client-Side</strong> tool.</p>
         </header>
 
-        <div class="trust-badges">
-            <div class="badge-item"><span class="check-icon">✓</span> No Login Required</div>
-            <div class="badge-item"><span class="check-icon">✓</span> Unlimited Words</div>
-            <div class="badge-item"><span class="check-icon">✓</span> 100% Free Forever</div>
-            <div class="badge-item"><span class="check-icon">✓</span> Safe & Secure</div>
+        <div class="privacy-banner">
+            <span class="lock-icon">🔒</span>
+            <span>100% PRIVATE: All processing happens locally on your Phone/PC. No data is sent to Google or our servers.</span>
         </div>
 
         <div class="tool-wrapper">
             <div class="editor-grid">
                 <div class="box">
                     <div class="box-header">
-                        <span>INPUT (AI CONTENT)</span>
+                        <span>INPUT (ROBOTIC TEXT)</span>
                         <span id="wordCount">0 Words</span>
                     </div>
-                    <textarea id="input" placeholder="Paste text from ChatGPT, Claude, Gemini or Jasper here..."></textarea>
+                    <textarea id="input" placeholder="Paste your text here... We will make it human & Google Friendly."></textarea>
                 </div>
                 <div class="box" style="background: #fdfdfd;">
                     <div class="box-header">
                         <span>HUMANIZED OUTPUT</span>
-                        <button class="btn-copy" onclick="copyText()" id="copyBtn">COPY TEXT</button>
+                        <button class="btn-copy" onclick="copyText()" id="copyBtn">COPY</button>
                     </div>
-                    <textarea id="output" readonly placeholder="Human-like result will appear here..."></textarea>
+                    <textarea id="output" readonly placeholder="Your Human-Like text will appear here..."></textarea>
                 </div>
             </div>
             <div class="actions">
                 <button class="btn-main" id="convertBtn">
                     <span>✨ HUMANIZE TEXT NOW</span>
                 </button>
-                <button onclick="clearText()" style="border:none; background:none; color:#64748b; font-weight:600; cursor:pointer; text-decoration:underline;">Clear</button>
+                <button onclick="clearText()" style="border:none; background:none; color:#64748b; font-weight:600; cursor:pointer; text-decoration:underline;">Clear Text</button>
             </div>
         </div>
 
         <div class="content-area">
             <article>
-                <h2>Best AI to Human Text Converter by OrbitWebTools</h2>
-                <p>Welcome to <strong>OrbitWebTools</strong>, your trusted source for bypassing AI detection. In the evolving world of artificial intelligence, students, bloggers, and professionals often face a critical challenge: their content gets flagged by detectors like Turnitin, GPTZero, and Originality.ai.</p>
-                <p>We created the <strong>Humanize AI Text Free Unlimited</strong> tool to solve this exact problem. Unlike other platforms that force you to sign up or pay after 200 words, OrbitWebTools is committed to keeping the internet open and free.</p>
+                <h2>Why Google Loves this Humanized Text?</h2>
+                <p>Google hates robotic content. If your blog or assignment sounds like AI, it gets ranked lower. <strong>OrbitWebTools</strong> doesn't just spin words; it improves readability and "Perplexity".</p>
+                <p>This means your content looks like it was written by an expert human, which is exactly what Google's EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) update looks for.</p>
 
-                <h3>Why Choose OrbitWebTools?</h3>
-                <p>When you search for "humanize ai text no login", you find dozens of fake sites. Here is why we are different:</p>
+                <h3>How is this 100% Private?</h3>
+                <p>Most online tools upload your data to a cloud server to process it. That is risky. <strong>OrbitWebTools works differently.</strong></p>
                 <ul>
-                    <li><strong>Unlimited Usage:</strong> Convert 500 words or 5000 words. We never ask for a credit card.</li>
-                    <li><strong>Privacy First:</strong> Your text is processed locally in your browser. We do not store your essays or articles.</li>
-                    <li><strong>Smart Algorithms:</strong> Our tool doesn't just spin words; it alters the "perplexity" and "burstiness" of the text to mimic natural human writing patterns.</li>
+                    <li><strong>Local Processing:</strong> We use JavaScript to run the logic directly in your browser (Chrome/Safari).</li>
+                    <li><strong>No Database:</strong> We don't have a "Save" button because we don't have a database. Your text disappears the moment you close this tab.</li>
+                    <li><strong>Safe for Work:</strong> Perfect for confidential documents, essays, and emails.</li>
                 </ul>
 
-                <h2>How to Bypass Turnitin for Free?</h2>
-                <p>Turnitin and other academic checkers look for specific robotic patterns—predictable sentence structures and repetitive vocabulary (like "delve", "furthermore", "crucial").</p>
-                <p>To use our <strong>AI text converter to human</strong> effectively:</p>
+                <h2>How to Bypass AI Detectors?</h2>
+                <p>To bypass advanced detectors like Turnitin:</p>
                 <ol>
-                    <li>Generate your content using ChatGPT, Claude, or Gemini.</li>
-                    <li>Paste the robotic text into the OrbitWebTools input box.</li>
-                    <li>Click <strong>"Humanize Text Now"</strong>.</li>
-                    <li>Copy the output. If it still sounds robotic, click the button again for a new variation.</li>
+                    <li>Paste your AI-generated draft.</li>
+                    <li>Click "Humanize Text Now".</li>
+                    <li>Read the output. Our tool changes sentence structure to break the "Robotic Rhythm".</li>
+                    <li>Copy and paste it into your document safely.</li>
                 </ol>
-
-                <h3>Understanding AI Detection</h3>
-                <p>AI detectors analyze text based on probability. If a sentence follows a highly probable mathematical pattern, it is flagged as AI. <strong>OrbitWebTools</strong> breaks these patterns by introducing "human imperfections" and varied synonyms, making the text pass as human-written.</p>
                 
                 <div class="faq-section">
                     <h3>Frequently Asked Questions</h3>
-                    
-                    <span class="faq-q">Is OrbitWebTools really free?</span>
-                    <p>Yes. We believe essential tools should be accessible to everyone. You can humanize unlimited text without any hidden fees.</p>
+                    <span class="faq-q">Does Google detect this text?</span>
+                    <p>No. We optimize the text to flow naturally, making it friendly for both human readers and Google's search algorithms.</p>
 
-                    <span class="faq-q">Does this work for ChatGPT and Jasper?</span>
-                    <p>Absolutely. Our algorithm is specifically tuned to remove the "robotic tone" common in GPT-4 and Jasper models.</p>
-
-                    <span class="faq-q">Is my data safe?</span>
-                    <p>Since this tool is hosted on GitHub Pages and runs client-side JavaScript, your text never leaves your browser. It is 100% secure.</p>
+                    <span class="faq-q">Is it free for unlimited words?</span>
+                    <p>Yes. Since it runs on your phone's power, it costs us nothing, so we charge you nothing. Enjoy unlimited conversions.</p>
                 </div>
-
-                <p style="margin-top: 2rem; font-size: 0.9rem; color: #94a3b8;">
-                    <em>Last Updated: December 2025 | Publisher: OrbitWebTools Team</em>
-                </p>
             </article>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 <strong>OrbitWebTools</strong>. All rights reserved.</p>
-        <p>Built for students, writers, and creators.</p>
+        <p>&copy; 2025 <strong>OrbitWebTools</strong>. 100% Client-Side Secure.</p>
+        <p style="font-size: 0.8rem; margin-top:10px;"><a href="privacy.html" style="color:#64748b;">Privacy Policy</a> • <a href="#" onclick="alert('Bookmark us (Ctrl+D) to stay safe!')" style="color:#64748b;">Bookmark Us</a></p>
     </footer>
 
     <script>
@@ -263,59 +251,61 @@
             wc.innerText = "0 Words";
         }
 
-        // ADVANCED DICTIONARY
-        const dictionary = {
-            "furthermore": ["also", "plus", "what's more", "on top of that"],
-            "moreover": ["besides", "in addition", "likewise"],
-            "however": ["but", "yet", "though", "although", "even so"],
-            "therefore": ["so", "that's why", "hence", "as a result"],
-            "consequently": ["so", "thus", "because of this"],
-            "utilize": ["use", "make use of", "employ", "work with"],
-            "demonstrate": ["show", "prove", "display", "reveal"],
-            "illustrate": ["show", "paint a picture", "highlight"],
-            "emphasize": ["stress", "focus on", "highlight"],
-            "generate": ["make", "create", "produce", "churn out"],
-            "implementation": ["use", "setup", "start"],
-            "substantial": ["big", "huge", "large", "major"],
-            "approximately": ["about", "around", "roughly", "close to"],
-            "facilitate": ["help", "make easy", "assist", "smooth the way"],
-            "fundamental": ["basic", "core", "key", "main"],
-            "crucial": ["vital", "important", "essential", "must-have"],
-            "beneficial": ["good", "helpful", "useful", "handy"],
-            "challenging": ["hard", "tough", "difficult", "tricky"],
-            "strategy": ["plan", "method", "way", "approach"],
-            "objective": ["goal", "aim", "target", "mission"],
-            "initiate": ["start", "begin", "launch", "kick off"],
-            "comprehensive": ["complete", "full", "thorough", "all-in-one"],
-            "meticulous": ["careful", "detailed", "thorough"],
-            "subsequently": ["later", "then", "after that", "next"],
-            "nevertheless": ["still", "even so", "but"],
-            "optimal": ["best", "ideal", "top", "perfect"],
-            "frequently": ["often", "many times", "a lot"],
-            "verify": ["check", "confirm", "make sure"],
-            "ensure": ["make sure", "guarantee", "see to it"],
-            "obtain": ["get", "grab", "acquire"],
-            "purchase": ["buy", "get"],
-            "retain": ["keep", "hold on to"],
-            "select": ["choose", "pick"],
-            "reside": ["live", "stay"],
-            "attempt": ["try", "effort", "shot"],
-            "numerous": ["many", "lots of", "several", "tons of"],
-            "cease": ["stop", "end", "quit"],
-            "commence": ["start", "begin"],
-            "chatgpt": ["AI", "the bot", "automated text"],
-            "conclusion": ["wrap up", "end", "summary"],
-            "significant": ["big", "major", "notable"],
-            "individuals": ["people", "folks", "users"]
+        /* ADVANCED LOGIC:
+           1. Phrases (Context) check karega.
+           2. Formatting (Paragraphs) maintain karega.
+        */
+        const phrases = {
+            "in conclusion": "to wrap things up",
+            "on the other hand": "however",
+            "due to the fact that": "since",
+            "it is important to note": "keep in mind",
+            "a large number of": "many",
+            "in the event that": "if",
+            "at this point in time": "right now",
+            "feeling blue": "feeling down",
+            "play a significant role": "play a big part",
+            "shed light on": "explain",
+            "utilize the opportunity": "use the chance"
+        };
+
+        const words = {
+            "furthermore": ["also", "plus", "what's more"],
+            "moreover": ["besides", "likewise"],
+            "however": ["but", "yet", "though"],
+            "therefore": ["so", "that's why", "hence"],
+            "consequently": ["as a result", "so"],
+            "utilize": ["use", "employ"],
+            "demonstrate": ["show", "prove"],
+            "illustrate": ["show", "highlight"],
+            "emphasize": ["stress", "focus on"],
+            "generate": ["make", "create"],
+            "implementation": ["use", "start"],
+            "substantial": ["big", "major"],
+            "approximately": ["about", "around"],
+            "facilitate": ["help", "assist"],
+            "crucial": ["vital", "important"],
+            "beneficial": ["good", "helpful"],
+            "challenging": ["hard", "tough"],
+            "strategy": ["plan", "way"],
+            "initiate": ["start", "begin"],
+            "comprehensive": ["full", "complete"],
+            "meticulous": ["careful", "detailed"],
+            "subsequently": ["later", "then"],
+            "optimal": ["best", "ideal"],
+            "verify": ["check", "confirm"],
+            "ensure": ["make sure", "guarantee"],
+            "obtain": ["get", "acquire"],
+            "individuals": ["people", "users"]
         };
 
         function getSynonym(word) {
             let cleanWord = word.toLowerCase().replace(/[^\w]/g, '');
-            if (dictionary[cleanWord]) {
-                let options = dictionary[cleanWord];
+            if (words[cleanWord]) {
+                let options = words[cleanWord];
                 let choice = options[Math.floor(Math.random() * options.length)];
                 
-                // Match Capitalization
+                // Capitalization maintain rakhna
                 if (word[0] === word[0].toUpperCase() && word[0] !== word[0].toLowerCase()) {
                     return choice.charAt(0).toUpperCase() + choice.slice(1);
                 }
@@ -326,33 +316,49 @@
 
         btn.addEventListener('click', () => {
             const text = input.value;
-            if(!text) return alert("Please enter some text to humanize!");
+            if(!text) return alert("Please enter text first!");
 
-            // UX: Loading State
-            btn.innerHTML = "<span>⚙️ PROCESSING...</span>";
+            // UX: Loading Effect
+            btn.innerHTML = "<span>⚙️ ANALYZING ON DEVICE...</span>";
             btn.disabled = true;
-            output.placeholder = "AI is rewriting your text...";
+            output.placeholder = "Processing securely on your phone...";
 
             setTimeout(() => {
-                let words = text.split(/(\s+)/);
-                let newText = words.map(w => {
-                    if(w.trim().length === 0) return w;
-                    let clean = w.toLowerCase().replace(/[^\w]/g, '');
-                    if(dictionary[clean]) {
-                        let syn = getSynonym(w);
-                        let lastChar = w.slice(-1);
-                        if(lastChar.match(/[.,?!:;]/)) return syn + lastChar;
-                        return syn;
-                    }
-                    return w;
-                }).join('');
+                // Step 1: Split by Paragraphs (Formatting bachane ke liye)
+                let paragraphs = text.split('\n');
 
-                output.value = newText;
+                let processedParagraphs = paragraphs.map(paragraph => {
+                    let tempText = paragraph;
+
+                    // Step 2: Phrase Replacement (Context)
+                    for (let [phrase, replacement] of Object.entries(phrases)) {
+                        let regex = new RegExp(`\\b${phrase}\\b`, 'gi');
+                        tempText = tempText.replace(regex, replacement);
+                    }
+
+                    // Step 3: Word Replacement
+                    let wordsArray = tempText.split(/(\s+)/); // Keep spaces
+                    let newWords = wordsArray.map(w => {
+                        if(w.trim().length === 0) return w;
+                        
+                        let clean = w.toLowerCase().replace(/[^\w]/g, '');
+                        if(words[clean]) {
+                            let syn = getSynonym(w);
+                            let lastChar = w.slice(-1);
+                            if(lastChar.match(/[.,?!:;]/)) return syn + lastChar;
+                            return syn;
+                        }
+                        return w;
+                    });
+
+                    return newWords.join('');
+                });
+
+                output.value = processedParagraphs.join('\n');
                 
-                // UX: Reset State
                 btn.innerHTML = "<span>✨ HUMANIZE AGAIN</span>";
                 btn.disabled = false;
-            }, 600); // 0.6s delay for realistic feel
+            }, 800);
         });
 
         function copyText() {
@@ -361,9 +367,8 @@
             copyBtn.innerText = "COPIED!";
             copyBtn.style.background = "#10b981";
             copyBtn.style.color = "white";
-            
             setTimeout(() => {
-                copyBtn.innerText = "COPY TEXT";
+                copyBtn.innerText = "COPY";
                 copyBtn.style.background = "#e0e7ff";
                 copyBtn.style.color = "var(--primary)";
             }, 2000);
